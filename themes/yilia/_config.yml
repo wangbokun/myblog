@@ -2,13 +2,9 @@
 menu:
   主页: /
   #所有文章: /archives
-  hdfs: /categories/hdfs/
-  yarn: /categories/yarn/
-  hive: /categories/hive/
-  spark: /categories/spark/
+  hadoop: /categories/hadoop/
   oozie: /categories/oozie/
-  hue: /categories/hue/
-  # 随笔: /tags/随笔
+  devops: /categories/devops/
 
 # SubNav
 #subnav:

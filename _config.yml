@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: BigData 
+title: devops Jason Wang blog
 subtitle:
 description:
 author: Jason Wang
@@ -46,17 +46,10 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
-	hdfs: hdfs
-	yarn: yarn
-	oozie: oozie
-	hue: hue
-	hive: hive
-	spark: spark
-	bash: bash
+	bigdata: bigdata
 	golang: golang
 	python: python
 	docker: docker
-	自动化运维: devops
 	开源: opencode
 
 tag_map:
@@ -83,4 +76,4 @@ theme: yilia
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:wangbokun/wangbokun.github.io.git 
+  repo: git@github.com:wangbokun/wangbokun.github.io.git
