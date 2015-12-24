@@ -1,8 +1,16 @@
+#oozieEmail
 layout: post
 title: oozie email
 date: 2015-11-02 19:40:36
 categories: oozie
 tags: 
+
+ ooize mail site
+---
+
+
+- 添加配置文件到/etc/oozie/conf/oozie-site.xml ，如下：
+
 ---
 		<property>
 		 	<name>
