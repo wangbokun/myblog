@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ERROR java.lang.NoSuchFieldError IS SECURITY ENABLED | devops Jason Wang blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="java  lang  NoSuchFieldError  IS  SECURITY  ENABLED
+
+
+2015-12-29 07:34:44,195 INFO [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService at dn39.hadoop.busdev.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERROR java.lang.NoSuchFieldError IS SECURITY ENABLED">
+<meta property="og:url" content="http://wangbokun.com/2015/12/29/hadoopQA_IS_SECURITY_ENABLED/index.html">
+<meta property="og:site_name" content="devops Jason Wang blog">
+<meta property="og:description" content="java  lang  NoSuchFieldError  IS  SECURITY  ENABLED
+
+
+2015-12-29 07:34:44,195 INFO [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService at dn39.hadoop.busdev.">
+<meta property="og:updated_time" content="2016-01-04T11:40:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ERROR java.lang.NoSuchFieldError IS SECURITY ENABLED">
+<meta name="twitter:description" content="java  lang  NoSuchFieldError  IS  SECURITY  ENABLED
+
+
+2015-12-29 07:34:44,195 INFO [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService at dn39.hadoop.busdev.">
+  
+    <link rel="alternative" href="/atom.xml" title="devops Jason Wang blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://wangbokun.com/img/touxiang.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jason Wang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/categories/hadoop/">hadoop</a></li>
+				        
+							<li><a href="/categories/hadoopqa/">hadoopqa</a></li>
+				        
+							<li><a href="/categories/oozie/">oozie</a></li>
+				        
+							<li><a href="/categories/hive/">hive</a></li>
+				        
+							<li><a href="/categories/devops/">devops</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-aws-s3-ec2/" style="font-size: 10px;">ooize aws s3 ec2</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，爱好：上网、睡觉、看美女</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Jason Wang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://wangbokun.com/img/touxiang.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jason Wang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/hadoop/">hadoop</a></li>
+		        
+					<li><a href="/categories/hadoopqa/">hadoopqa</a></li>
+		        
+					<li><a href="/categories/oozie/">oozie</a></li>
+		        
+					<li><a href="/categories/hive/">hive</a></li>
+		        
+					<li><a href="/categories/devops/">devops</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-hadoopQA_IS_SECURITY_ENABLED" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/hadoopQA_IS_SECURITY_ENABLED/" class="article-date">
+  	<time datetime="2015-12-29T11:53:36.000Z" itemprop="datePublished">2015-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ERROR java.lang.NoSuchFieldError IS SECURITY ENABLED
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop-hdfs-yarn/">hadoop hdfs yarn</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/hadoopqa/">hadoopqa</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p> java  lang  NoSuchFieldError  IS  SECURITY  ENABLED</p>
+</blockquote>
+<hr>
+<pre><code><span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">195</span> INFO [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService <span class="keyword">at</span> dn39.hadoop.busdev.usw2.cmcm.com/<span class="number">10.2</span><span class="number">.2</span><span class="number">.210</span>:<span class="number">15491</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">254</span> INFO [main] org.mortbay.<span class="command">log</span>: Logging <span class="keyword">to</span> org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.<span class="command">log</span>) via org.mortbay.<span class="command">log</span>.Slf4jLog
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">256</span> INFO [main] org.apache.hadoop.http.HttpRequestLog: Http request <span class="command">log</span> <span class="keyword">for</span> http.requests.mapreduce <span class="keyword">is</span> <span class="keyword">not</span> defined
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">265</span> INFO [main] org.apache.hadoop.http.HttpServer2: Added <span class="keyword">global</span> filter 'safety' (<span class="type">class</span>=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">268</span> INFO [main] org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (<span class="type">class</span>=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) <span class="keyword">to</span> context mapreduce
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">269</span> INFO [main] org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (<span class="type">class</span>=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) <span class="keyword">to</span> context static
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">272</span> INFO [main] org.apache.hadoop.http.HttpServer2: adding path spec: /mapreduce/*
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">272</span> INFO [main] org.apache.hadoop.http.HttpServer2: adding path spec: /ws/*
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">282</span> INFO [main] org.apache.hadoop.http.HttpServer2: Jetty bound <span class="keyword">to</span> port <span class="number">3294</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">282</span> INFO [main] org.mortbay.<span class="command">log</span>: jetty-<span class="number">6.1</span><span class="number">.26</span>.cloudera<span class="number">.2</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">298</span> INFO [main] org.mortbay.<span class="command">log</span>: Extract jar:<span class="type">file</span>:/usr/lib/hadoop-yarn/hadoop-yarn-common-<span class="number">2.6</span><span class="number">.0</span>-cdh5<span class="number">.4</span><span class="number">.8</span>.jar!/webapps/mapreduce <span class="keyword">to</span> /tmp/Jetty_0_0_0_0_3294_mapreduce____wbl4h1/webapp
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">541</span> WARN [main] org.mortbay.<span class="command">log</span>: failed jsp: java.lang.NoSuchFieldError: IS_SECURITY_ENABLED
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">545</span> WARN [main] org.mortbay.<span class="command">log</span>: failed org.mortbay.jetty.webapp.WebAppContext@<span class="number">75392</span>d33{/,jar:<span class="type">file</span>:/usr/lib/hadoop-yarn/hadoop-yarn-common-<span class="number">2.6</span><span class="number">.0</span>-cdh5<span class="number">.4</span><span class="number">.8</span>.jar!/webapps/mapreduce}: java.lang.NoSuchFieldError: IS_SECURITY_ENABLED
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">545</span> WARN [main] org.mortbay.<span class="command">log</span>: failed ContextHandlerCollection@<span class="number">7</span>cc6ab64: java.lang.NoSuchFieldError: IS_SECURITY_ENABLED
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">546</span> ERROR [main] org.mortbay.<span class="command">log</span>: Error starting handlers
+java.lang.NoSuchFieldError: IS_SECURITY_ENABLED
+    <span class="keyword">at</span> org.apache.jasper.compiler.JspRuntimeContext.&lt;init&gt;(JspRuntimeContext.java:<span class="number">197</span>)
+    <span class="keyword">at</span> org.apache.jasper.servlet.JspServlet.init(JspServlet.java:<span class="number">150</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:<span class="number">440</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:<span class="number">263</span>)
+    <span class="keyword">at</span> org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:<span class="number">50</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:<span class="number">736</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.servlet.Context.startContext(Context.java:<span class="number">140</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:<span class="number">1282</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:<span class="number">518</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:<span class="number">499</span>)
+    <span class="keyword">at</span> org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:<span class="number">50</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:<span class="number">152</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:<span class="number">156</span>)
+    <span class="keyword">at</span> org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:<span class="number">50</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:<span class="number">130</span>)
+    <span class="keyword">at</span> org.mortbay.jetty.Server.doStart(Server.java:<span class="number">224</span>)
+    <span class="keyword">at</span> org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:<span class="number">50</span>)
+    <span class="keyword">at</span> org.apache.hadoop.http.HttpServer2.start(HttpServer2.java:<span class="number">829</span>)
+    <span class="keyword">at</span> org.apache.hadoop.yarn.webapp.WebApps$Builder.start(WebApps.java:<span class="number">273</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.client.MRClientService.serviceStart(MRClientService.java:<span class="number">142</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.serviceStart(MRAppMaster.java:<span class="number">1084</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$<span class="number">4.</span><span class="command">run</span>(MRAppMaster.java:<span class="number">1500</span>)
+    <span class="keyword">at</span> java.security.AccessController.doPrivileged(Native Method)
+    <span class="keyword">at</span> javax.security.auth.Subject.doAs(Subject.java:<span class="number">415</span>)
+    <span class="keyword">at</span> org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:<span class="number">1671</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.initAndStartAppMaster(MRAppMaster.java:<span class="number">1496</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.main(MRAppMaster.java:<span class="number">1429</span>)
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">550</span> INFO [main] org.mortbay.<span class="command">log</span>: Started HttpServer2$SelectChannelConnectorWithSafeStartup@<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">3294</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">550</span> ERROR [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Webapps failed <span class="keyword">to</span> start. Ignoring <span class="keyword">for</span> now:
+org.apache.hadoop.yarn.webapp.WebAppException: Error starting http server
+    <span class="keyword">at</span> org.apache.hadoop.yarn.webapp.WebApps$Builder.start(WebApps.java:<span class="number">278</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.client.MRClientService.serviceStart(MRClientService.java:<span class="number">142</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.serviceStart(MRAppMaster.java:<span class="number">1084</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$<span class="number">4.</span><span class="command">run</span>(MRAppMaster.java:<span class="number">1500</span>)
+    <span class="keyword">at</span> java.security.AccessController.doPrivileged(Native Method)
+    <span class="keyword">at</span> javax.security.auth.Subject.doAs(Subject.java:<span class="number">415</span>)
+    <span class="keyword">at</span> org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:<span class="number">1671</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.initAndStartAppMaster(MRAppMaster.java:<span class="number">1496</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.main(MRAppMaster.java:<span class="number">1429</span>)
+Caused <span class="keyword">by</span>: java.io.IOException: Problem <span class="keyword">in</span> starting http server. Server handlers failed
+    <span class="keyword">at</span> org.apache.hadoop.http.HttpServer2.start(HttpServer2.java:<span class="number">841</span>)
+    <span class="keyword">at</span> org.apache.hadoop.yarn.webapp.WebApps$Builder.start(WebApps.java:<span class="number">273</span>)
+    ... <span class="number">10</span> more
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">554</span> INFO [main] org.apache.hadoop.ipc.CallQueueManager: Using callQueue <span class="type">class</span> java.util.concurrent.LinkedBlockingQueue
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">554</span> INFO [Socket Reader <span class="comment">#1 for port 47677] org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 47677</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">558</span> INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">558</span> INFO [IPC Server listener <span class="function_start"><span class="keyword">on</span></span> <span class="number">47677</span>] org.apache.hadoop.ipc.Server: IPC Server listener <span class="function_start"><span class="keyword">on</span></span> <span class="number">47677</span>: starting
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">599</span> INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:<span class="constant">true</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">599</span> INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: maxTaskFailuresPerNode <span class="keyword">is</span> <span class="number">3</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">599</span> INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: blacklistDisablePercent <span class="keyword">is</span> <span class="number">33</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">675</span> ERROR [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Exception <span class="keyword">while</span> registering
+java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.client.MRClientService.getHttpPort(MRClientService.java:<span class="number">174</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">157</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.serviceStart(RMCommunicator.java:<span class="number">122</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator.serviceStart(RMContainerAllocator.java:<span class="number">239</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter.serviceStart(MRAppMaster.java:<span class="number">819</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.CompositeService.serviceStart(CompositeService.java:<span class="number">120</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.serviceStart(MRAppMaster.java:<span class="number">1087</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$<span class="number">4.</span><span class="command">run</span>(MRAppMaster.java:<span class="number">1500</span>)
+    <span class="keyword">at</span> java.security.AccessController.doPrivileged(Native Method)
+    <span class="keyword">at</span> javax.security.auth.Subject.doAs(Subject.java:<span class="number">415</span>)
+    <span class="keyword">at</span> org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:<span class="number">1671</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.initAndStartAppMaster(MRAppMaster.java:<span class="number">1496</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.main(MRAppMaster.java:<span class="number">1429</span>)
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">675</span> INFO [main] org.apache.hadoop.service.AbstractService: Service RMCommunicator failed <span class="keyword">in</span> state STARTED; cause: org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.NullPointerException
+org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">178</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.serviceStart(RMCommunicator.java:<span class="number">122</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator.serviceStart(RMContainerAllocator.java:<span class="number">239</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter.serviceStart(MRAppMaster.java:<span class="number">819</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.CompositeService.serviceStart(CompositeService.java:<span class="number">120</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.serviceStart(MRAppMaster.java:<span class="number">1087</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$<span class="number">4.</span><span class="command">run</span>(MRAppMaster.java:<span class="number">1500</span>)
+    <span class="keyword">at</span> java.security.AccessController.doPrivileged(Native Method)
+    <span class="keyword">at</span> javax.security.auth.Subject.doAs(Subject.java:<span class="number">415</span>)
+    <span class="keyword">at</span> org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:<span class="number">1671</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.initAndStartAppMaster(MRAppMaster.java:<span class="number">1496</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.main(MRAppMaster.java:<span class="number">1429</span>)
+Caused <span class="keyword">by</span>: java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.client.MRClientService.getHttpPort(MRClientService.java:<span class="number">174</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">157</span>)
+    ... <span class="number">14</span> more
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">676</span> INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Final Stats: PendingReds:<span class="number">0</span> ScheduledMaps:<span class="number">0</span> ScheduledReds:<span class="number">0</span> AssignedMaps:<span class="number">0</span> AssignedReds:<span class="number">0</span> CompletedMaps:<span class="number">0</span> CompletedReds:<span class="number">0</span> ContAlloc:<span class="number">0</span> ContRel:<span class="number">0</span> HostLocal:<span class="number">0</span> RackLocal:<span class="number">0</span>
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">676</span> INFO [main] org.apache.hadoop.service.AbstractService: Service org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter failed <span class="keyword">in</span> state STARTED; cause: org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.NullPointerException
+org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">178</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.serviceStart(RMCommunicator.java:<span class="number">122</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator.serviceStart(RMContainerAllocator.java:<span class="number">239</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter.serviceStart(MRAppMaster.java:<span class="number">819</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.CompositeService.serviceStart(CompositeService.java:<span class="number">120</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.serviceStart(MRAppMaster.java:<span class="number">1087</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$<span class="number">4.</span><span class="command">run</span>(MRAppMaster.java:<span class="number">1500</span>)
+    <span class="keyword">at</span> java.security.AccessController.doPrivileged(Native Method)
+    <span class="keyword">at</span> javax.security.auth.Subject.doAs(Subject.java:<span class="number">415</span>)
+    <span class="keyword">at</span> org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:<span class="number">1671</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.initAndStartAppMaster(MRAppMaster.java:<span class="number">1496</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.main(MRAppMaster.java:<span class="number">1429</span>)
+Caused <span class="keyword">by</span>: java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.client.MRClientService.getHttpPort(MRClientService.java:<span class="number">174</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">157</span>)
+    ... <span class="number">14</span> more
+<span class="number">2015</span>-<span class="number">12</span>-<span class="number">29</span> <span class="number">07</span>:<span class="number">34</span>:<span class="number">44</span>,<span class="number">676</span> INFO [main] org.apache.hadoop.service.AbstractService: Service org.apache.hadoop.mapreduce.v2.app.MRAppMaster failed <span class="keyword">in</span> state STARTED; cause: org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.NullPointerException
+org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">178</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.serviceStart(RMCommunicator.java:<span class="number">122</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator.serviceStart(RMContainerAllocator.java:<span class="number">239</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter.serviceStart(MRAppMaster.java:<span class="number">819</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.CompositeService.serviceStart(CompositeService.java:<span class="number">120</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.serviceStart(MRAppMaster.java:<span class="number">1087</span>)
+    <span class="keyword">at</span> org.apache.hadoop.service.AbstractService.start(AbstractService.java:<span class="number">193</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster$<span class="number">4.</span><span class="command">run</span>(MRAppMaster.java:<span class="number">1500</span>)
+    <span class="keyword">at</span> java.security.AccessController.doPrivileged(Native Method)
+    <span class="keyword">at</span> javax.security.auth.Subject.doAs(Subject.java:<span class="number">415</span>)
+    <span class="keyword">at</span> org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:<span class="number">1671</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.initAndStartAppMaster(MRAppMaster.java:<span class="number">1496</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.MRAppMaster.main(MRAppMaster.java:<span class="number">1429</span>)
+Caused <span class="keyword">by</span>: java.lang.NullPointerException
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.client.MRClientService.getHttpPort(MRClientService.java:<span class="number">174</span>)
+    <span class="keyword">at</span> org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator.register(RMCommunicator.java:<span class="number">157</span>)
+    ... <span class="number">14</span> more
+</code></pre><hr>
+<p>【解决方案】</p>
+<blockquote>
+<p>workflow.xml的pig action注释掉如下属性：</p>
+</blockquote>
+<hr>
+<pre><code><span class="variable">&lt;!—&lt;property&gt;</span>
+<span class="variable">&lt;name&gt;</span>mapreduce.<span class="keyword">user</span>.classpath.first<span class="variable">&lt;/name&gt;</span>
+<span class="variable">&lt;value&gt;</span>true<span class="variable">&lt;/value&gt;</span>
+<span class="variable">&lt;/property&gt;</span>
+<span class="variable">&lt;property&gt;</span>
+<span class="variable">&lt;name&gt;</span>oozie.launcher.mapreduce.<span class="keyword">user</span>.classpath.first<span class="variable">&lt;/name&gt;</span>
+<span class="variable">&lt;value&gt;</span>true<span class="variable">&lt;/value&gt;</span>
+<span class="variable">&lt;/property&gt;</span>—&gt;
+</code></pre><hr>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/04/hivemetaexception/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          hive MetaException
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/26/hadoopQA_does_not_have_any_open_files/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ERROR does not have any open files</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hadoopQA_IS_SECURITY_ENABLED" data-title="ERROR java.lang.NoSuchFieldError IS SECURITY ENABLED" data-url="http://wangbokun.com/2015/12/29/hadoopQA_IS_SECURITY_ENABLED/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	<!-- var duoshuoQuery = {short_name:"true"}; -->
+	var duoshuoQuery = {short_name:"wangbokun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jason Wang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

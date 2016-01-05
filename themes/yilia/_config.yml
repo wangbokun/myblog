@@ -3,7 +3,9 @@ menu:
   主页: /
   #所有文章: /archives
   hadoop: /categories/hadoop/
+  hadoopqa: /categories/hadoopqa/
   oozie: /categories/oozie/
+  hive: /categories/hive/
   devops: /categories/devops/
 
 # SubNav

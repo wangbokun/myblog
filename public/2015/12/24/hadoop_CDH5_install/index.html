@@ -5,16 +5,34 @@
   
   <title>CDH5 install | devops Jason Wang blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hadoop CDH5 install">
+  <meta name="description" content="hadoop CDH5 install
+一：安装前准备工作
+
+
+hostname 采用rsync分发文件 /etc/hosts , change_hostsname.sh，然后批量run script.
+
+hosts文件：10.50.x.x launcher_x.x.com&amp;#10;10.50.x.x zk1.x.x.com&amp;#10;10.50.x.x zk2.x.x.com&amp;#10;10.50.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDH5 install">
 <meta property="og:url" content="http://wangbokun.com/2015/12/24/hadoop_CDH5_install/index.html">
 <meta property="og:site_name" content="devops Jason Wang blog">
-<meta property="og:description" content="hadoop CDH5 install">
-<meta property="og:updated_time" content="2015-12-24T06:40:45.000Z">
+<meta property="og:description" content="hadoop CDH5 install
+一：安装前准备工作
+
+
+hostname 采用rsync分发文件 /etc/hosts , change_hostsname.sh，然后批量run script.
+
+hosts文件：10.50.x.x launcher_x.x.com&amp;#10;10.50.x.x zk1.x.x.com&amp;#10;10.50.x.x zk2.x.x.com&amp;#10;10.50.">
+<meta property="og:updated_time" content="2015-12-24T11:07:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CDH5 install">
-<meta name="twitter:description" content="hadoop CDH5 install">
+<meta name="twitter:description" content="hadoop CDH5 install
+一：安装前准备工作
+
+
+hostname 采用rsync分发文件 /etc/hosts , change_hostsname.sh，然后批量run script.
+
+hosts文件：10.50.x.x launcher_x.x.com&amp;#10;10.50.x.x zk1.x.x.com&amp;#10;10.50.x.x zk2.x.x.com&amp;#10;10.50.">
   
     <link rel="alternative" href="/atom.xml" title="devops Jason Wang blog" type="application/atom+xml">
   
@@ -86,7 +104,11 @@
 				        
 							<li><a href="/categories/hadoop/">hadoop</a></li>
 				        
+							<li><a href="/categories/hadoopqa/">hadoopqa</a></li>
+				        
 							<li><a href="/categories/oozie/">oozie</a></li>
+				        
+							<li><a href="/categories/hive/">hive</a></li>
 				        
 							<li><a href="/categories/devops/">devops</a></li>
 				        
@@ -102,7 +124,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a>
+						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-aws-s3-ec2/" style="font-size: 10px;">ooize aws s3 ec2</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
 					</div>
 				</section>
 				
@@ -143,7 +165,11 @@
 		        
 					<li><a href="/categories/hadoop/">hadoop</a></li>
 		        
+					<li><a href="/categories/hadoopqa/">hadoopqa</a></li>
+		        
 					<li><a href="/categories/oozie/">oozie</a></li>
+		        
+					<li><a href="/categories/hive/">hive</a></li>
 		        
 					<li><a href="/categories/devops/">devops</a></li>
 		        
@@ -199,7 +225,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="hadoop_CDH5_install">hadoop CDH5 install</h1>
+        <h1 id="hadoop_CDH5_install">hadoop CDH5 install</h1><blockquote>
+<p>一：安装前准备工作</p>
+</blockquote>
+<ul>
+<li>hostname<br> 采用rsync分发文件 /etc/hosts , change_hostsname.sh，然后批量run script.</li>
+</ul>
+<h3 id="hosts文件：">hosts文件：</h3><pre><code class="text">10.50.x.x launcher_x.x.com&#10;10.50.x.x zk1.x.x.com&#10;10.50.x.x zk2.x.x.com&#10;10.50.x.x zk3.x.x.com&#10;10.50.x.x nn1.x.x.com&#10;10.50.x.x nn2.x.x.com&#10;10.50.x.x rm1.x.x.com&#10;10.50.x.x rm2.x.x.com&#10;10.50.x.x dn001.x.x.com
+</code></pre>
+<h3 id="script_:_change_hostsname-sh">script :  change_hostsname.sh</h3><pre><code class="bash"><span class="shebang">#!/bin/sh</span>
+IP=`hostname  -i`
+IP=`ip ad|grep inet|grep bond0|awk -F<span class="string">' '</span> <span class="string">'{print $2}'</span>|awk -F<span class="string">'/'</span> <span class="string">'{print $1}'</span>`
+HOST_NAME=`grep <span class="variable">$IP</span>  /etc/hosts|awk -F<span class="string">' '</span>   <span class="string">'{print $2}'</span>`
+sed -i <span class="string">"2s/^.*$/HOSTNAME=<span class="variable">$HOST_NAME</span>/"</span>   /etc/sysconfig/network
+hostname <span class="variable">$HOST_NAME</span>
+</code></pre>
+
       
     </div>
     
@@ -208,9 +249,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2015/12/26/hadoopQA_does_not_have_any_open_files/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ERROR does not have any open files
+        
+      </div>
+    </a>
   
-    <a href="/2015/12/24/hadoopQA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hadoop Q&amp;A</div>
+  
+    <a href="/2015/12/24/hadoopQA_lzo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ERROR lzo.GPLNativeCodeLoader Could not load native gpl library</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -266,7 +316,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 Jason Wang
+    		&copy; 2016 Jason Wang
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

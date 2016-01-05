@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hive MetaException | devops Jason Wang blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[ERROR message]
+
+  MetaException(message:Got exception: .
+  org.apache.hadoop.hive.metastore.api.MetaException.
+  Hive Schema version 0.13.0 does not match metastore&apos;s.
+schema version 1.1.0 Metastore">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hive MetaException">
+<meta property="og:url" content="http://wangbokun.com/2016/01/04/hivemetaexception/index.html">
+<meta property="og:site_name" content="devops Jason Wang blog">
+<meta property="og:description" content="[ERROR message]
+
+  MetaException(message:Got exception: .
+  org.apache.hadoop.hive.metastore.api.MetaException.
+  Hive Schema version 0.13.0 does not match metastore&apos;s.
+schema version 1.1.0 Metastore">
+<meta property="og:updated_time" content="2016-01-04T15:31:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hive MetaException">
+<meta name="twitter:description" content="[ERROR message]
+
+  MetaException(message:Got exception: .
+  org.apache.hadoop.hive.metastore.api.MetaException.
+  Hive Schema version 0.13.0 does not match metastore&apos;s.
+schema version 1.1.0 Metastore">
+  
+    <link rel="alternative" href="/atom.xml" title="devops Jason Wang blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://wangbokun.com/img/touxiang.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jason Wang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/categories/hadoop/">hadoop</a></li>
+				        
+							<li><a href="/categories/hadoopqa/">hadoopqa</a></li>
+				        
+							<li><a href="/categories/oozie/">oozie</a></li>
+				        
+							<li><a href="/categories/hive/">hive</a></li>
+				        
+							<li><a href="/categories/devops/">devops</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-aws-s3-ec2/" style="font-size: 10px;">ooize aws s3 ec2</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，爱好：上网、睡觉、看美女</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Jason Wang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://wangbokun.com/img/touxiang.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jason Wang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/hadoop/">hadoop</a></li>
+		        
+					<li><a href="/categories/hadoopqa/">hadoopqa</a></li>
+		        
+					<li><a href="/categories/oozie/">oozie</a></li>
+		        
+					<li><a href="/categories/hive/">hive</a></li>
+		        
+					<li><a href="/categories/devops/">devops</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-hivemetaexception" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/04/hivemetaexception/" class="article-date">
+  	<time datetime="2016-01-04T11:40:36.000Z" itemprop="datePublished">2016-01-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hive MetaException
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MetaException-hive/">MetaException hive</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/hive/">hive</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>[ERROR message]</p>
+</blockquote>
+<pre><code>  MetaException(message:Got exception: .
+  org.apache.hadoop.hive.metastore.api.MetaException.
+  Hive Schema <span class="property">version</span> <span class="number">0.13</span><span class="number">.0</span> <span class="keyword">does</span> <span class="keyword">not</span> match metastore's.
+schema <span class="property">version</span> <span class="number">1.1</span><span class="number">.0</span> Metastore <span class="keyword">is</span> <span class="keyword">not</span> upgraded <span class="keyword">or</span> . 
+corrupt)
+</code></pre><blockquote>
+<p>[解决方案1]</p>
+</blockquote>
+<pre><code>mysql&gt; select * from VERSION;
+<span class="code">+--------+</span>----------------<span class="code">+----------------------------------+</span>.
+
+<span class="header">| VER_ID | SCHEMA_VERSION | VERSION_COMMENT |
++--------+----------------+----------------------------------+</span>
+<span class="header">| 1 | 1.1.0 | Set by MetaStore root@10.3.9.246 |
++--------+----------------+----------------------------------+</span>
+1 row in set (0.01 sec)
+
+mysql&gt; TRUNCATE TABLE VERSION;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql&gt; INSERT INTO VERSION (VER<span class="emphasis">_ID, SCHEMA_</span>VERSION, VERSION<span class="emphasis">_COMMENT) VALUES (1, '0.13.0', 'Hive release version 0.13.0');
+Query OK, 1 row affected (0.02 sec)
+
+</span><span class="header">mysql&gt; select * from VERSION;
++--------+----------------+-----------------------------+</span>
+<span class="header">| VER_ID | SCHEMA_VERSION | VERSION_COMMENT |
++--------+----------------+-----------------------------+</span>
+<span class="header">| 1 | 0.13.0 | Hive release version 0.13.0 |
++--------+----------------+-----------------------------+</span>
+1 row in set (0.01 sec)
+</code></pre><blockquote>
+<p>[解决方案2]</p>
+</blockquote>
+<pre><code><span class="preprocessor"># ./schematool -dbType derby -initSchemaTo <span class="number">0.1</span><span class="number">.3</span><span class="number">.0</span></span>
+Metastore connection URL: jdbc:mysql:<span class="comment">//emr-busdevbigdata.c2lyaqdpfktq.us-west-1.rds.amazonaws.com/hive</span>
+Metastore Connection Driver : com.mysql.jdbc.Driver
+Metastore connection User: hive
+Starting metastore schema initialization to <span class="number">0.1</span><span class="number">.3</span><span class="number">.0</span>
+org.apache.hadoop.hive.metastore.HiveMetaException:     Unknown version specified <span class="keyword">for</span> initialization: <span class="number">0.1</span><span class="number">.3</span><span class="number">.0</span>
+*** schemaTool failed ***
+</code></pre><blockquote>
+<p>根本原因，</p>
+</blockquote>
+<p>hive-site.xml 第一次已启动修改为ture，  以后改为false</p>
+<pre><code><span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>hive.metastore.schema.verification<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>false<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/04/hadoopyarnqueue/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          yarn 调度器 Capacity Scheduler
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/29/hadoopQA_IS_SECURITY_ENABLED/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ERROR java.lang.NoSuchFieldError IS SECURITY ENABLED</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hivemetaexception" data-title="hive MetaException" data-url="http://wangbokun.com/2016/01/04/hivemetaexception/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	<!-- var duoshuoQuery = {short_name:"true"}; -->
+	var duoshuoQuery = {short_name:"wangbokun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jason Wang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

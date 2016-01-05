@@ -2,18 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wangbokun.com/2015/12/24/hadoop_CDH5_install/</loc>
-    <lastmod>2015-12-24T06:40:45.000Z</lastmod>
+    <loc>http://wangbokun.com/2016/01/06/oozieawss3/</loc>
+    <lastmod>2016-01-05T12:43:46.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wangbokun.com/2015/12/24/hadoopQA/</loc>
-    <lastmod>2015-12-24T05:56:22.000Z</lastmod>
+    <loc>http://wangbokun.com/2016/01/05/ooziesqlerrorinoperation/</loc>
+    <lastmod>2016-01-05T07:47:19.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2016/01/04/hadoopyarnqueue/</loc>
+    <lastmod>2016-01-04T16:39:40.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2016/01/04/hadoopyarnconfig/</loc>
+    <lastmod>2016-01-04T15:47:45.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2016/01/04/hivemetaexception/</loc>
+    <lastmod>2016-01-04T15:31:42.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://wangbokun.com/2015/11/02/oozieEmail/</loc>
-    <lastmod>2015-12-24T05:48:19.000Z</lastmod>
+    <lastmod>2016-01-04T15:17:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2015/11/30/oozie_sharelib_upgrade/</loc>
+    <lastmod>2016-01-04T11:48:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2015/12/29/hadoopQA_IS_SECURITY_ENABLED/</loc>
+    <lastmod>2016-01-04T11:40:23.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2015/12/26/hadoopQA_does_not_have_any_open_files/</loc>
+    <lastmod>2015-12-26T07:57:19.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2015/12/24/hadoopQA_lzo/</loc>
+    <lastmod>2015-12-26T07:55:20.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangbokun.com/2015/12/24/hadoop_CDH5_install/</loc>
+    <lastmod>2015-12-24T11:07:01.000Z</lastmod>
   </url>
   
 </urlset>
