@@ -91,6 +91,8 @@
 				        
 							<li><a href="/categories/hive/">hive</a></li>
 				        
+							<li><a href="/categories/hue/">hue</a></li>
+				        
 							<li><a href="/categories/devops/">devops</a></li>
 				        
 						</ul>
@@ -105,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-aws-s3-ec2/" style="font-size: 10px;">ooize aws s3 ec2</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
+						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/hue-admin-user/" style="font-size: 10px;">hue admin user</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
 					</div>
 				</section>
 				
@@ -152,6 +154,8 @@
 		        
 					<li><a href="/categories/hive/">hive</a></li>
 		        
+					<li><a href="/categories/hue/">hue</a></li>
+		        
 					<li><a href="/categories/devops/">devops</a></li>
 		        
 		        <div class="clearfix"></div>
@@ -167,11 +171,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-oozieawss3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hueadminusercreate" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/06/oozieawss3/" class="article-date">
-  	<time datetime="2016-01-06T12:40:36.000Z" itemprop="datePublished">2016-01-06</time>
+      <a href="/2016/01/09/hueadminusercreate/" class="article-date">
+  	<time datetime="2016-01-09T05:53:36.000Z" itemprop="datePublished">2016-01-09</time>
 </a>
     </div>
   
@@ -184,7 +188,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/06/oozieawss3/">oozie 访问aws s3</a>
+      <a class="article-title" href="/2016/01/09/hueadminusercreate/">hue create admin user</a>
     </h1>
   
 
@@ -193,23 +197,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>ec2自建CDH5.1后，发现访问s3不太友好，于是搜刮EMR上oozie s3的一些lib  jar 过来，完美解决，因为不开源只能先把jar搞过来，能跑就可以了,<br>会遇到很多问题，比如oozie check input s3目录，文件命名存在，却check不到，等等一系列.<br>记录解决办法如下两步.</p>
-</blockquote>
-<hr>
-<pre><code>/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">oozie</span>/<span class="title">libext</span></span>
-/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">oozie</span>/<span class="title">libserver</span></span>
-/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">oozie</span>/<span class="title">libtools</span></span>
-</code></pre><hr>
-<blockquote>
-<p>修改oozie-site.xml</p>
-</blockquote>
-<hr>
-<pre><code> <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">name</span>&gt;</span>oozie.service.HadoopAccessorService.supported.filesystems<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">value</span>&gt;</span>hdfs,viewfs,s3,s3n<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-</code></pre><hr>
+        <ul>
+<li>hue忘记超级用户密码，如果可以登录系统，可以使用以下命令创建超管.</li>
+<li><p>hue创建超级用户 </p>
+<pre><code>/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">hue</span>/<span class="title">build</span>/<span class="title">env</span>/<span class="title">bin</span>/<span class="title">hue</span> <span class="title">createsuperuser</span></span>
+</code></pre></li>
+</ul>
 
       
     </div>
@@ -218,12 +211,12 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ooize-aws-s3-ec2/">ooize aws s3 ec2</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hue-admin-user/">hue admin user</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/oozie/">oozie</a>
+	<a class="article-category-link" href="/categories/hue/">hue</a>
 	</div>
 
 

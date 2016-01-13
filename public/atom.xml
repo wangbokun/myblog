@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://wangbokun.com/"/>
-  <updated>2016-01-05T12:43:46.000Z</updated>
+  <updated>2016-01-12T09:42:44.000Z</updated>
   <id>http://wangbokun.com/</id>
   
   <author>
@@ -15,37 +15,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[oozie 访问aws s3]]></title>
-    <link href="http://wangbokun.com/2016/01/06/oozieawss3/"/>
-    <id>http://wangbokun.com/2016/01/06/oozieawss3/</id>
-    <published>2016-01-06T12:40:36.000Z</published>
-    <updated>2016-01-05T12:43:46.000Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>ec2自建CDH5.1后，发现访问s3不太友好，于是搜刮EMR上oozie s3的一些lib  jar 过来，完美解决，因为不开源只能先把jar搞过来，能跑就可以了,<br>会遇到很多问题，比如oozie check input s3目录，文件命名存在，却check不到，等等一系列.<br>记录解决办法如下两步.</p>
-</blockquote>
-<hr>
-<pre><code>/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">oozie</span>/<span class="title">libext</span></span>
-/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">oozie</span>/<span class="title">libserver</span></span>
-/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">oozie</span>/<span class="title">libtools</span></span>
-</code></pre><hr>
-<blockquote>
-<p>修改oozie-site.xml</p>
-</blockquote>
-<hr>
-<pre><code> <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">name</span>&gt;</span>oozie.service.HadoopAccessorService.supported.filesystems<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">value</span>&gt;</span>hdfs,viewfs,s3,s3n<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-</code></pre><hr>
+    <title><![CDATA[hue create admin user]]></title>
+    <link href="http://wangbokun.com/2016/01/09/hueadminusercreate/"/>
+    <id>http://wangbokun.com/2016/01/09/hueadminusercreate/</id>
+    <published>2016-01-09T05:53:36.000Z</published>
+    <updated>2016-01-12T09:42:44.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li>hue忘记超级用户密码，如果可以登录系统，可以使用以下命令创建超管.</li>
+<li><p>hue创建超级用户 </p>
+<pre><code>/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">hue</span>/<span class="title">build</span>/<span class="title">env</span>/<span class="title">bin</span>/<span class="title">hue</span> <span class="title">createsuperuser</span></span>
+</code></pre></li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<blockquote>
-<p>ec2自建CDH5.1后，发现访问s3不太友好，于是搜刮EMR上oozie s3的一些lib  jar 过来，完美解决，因为不开源只能先把jar搞过来，能跑就可以了,<br>会遇到很多问题，比如oozie check input s3目录，文件命名]]>
+    <![CDATA[<ul>
+<li>hue忘记超级用户密码，如果可以登录系统，可以使用以下命令创建超管.</li>
+<li><p>hue创建超级用户 </p>
+<pre><code>/usr/<span class="class"><span class="keyword">lib</span>/]]>
     </summary>
     
-      <category term="ooize aws s3 ec2" scheme="http://wangbokun.com/tags/ooize-aws-s3-ec2/"/>
+      <category term="hue admin user" scheme="http://wangbokun.com/tags/hue-admin-user/"/>
     
-      <category term="oozie" scheme="http://wangbokun.com/categories/oozie/"/>
+      <category term="hue" scheme="http://wangbokun.com/categories/hue/"/>
     
   </entry>
   
@@ -732,7 +723,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=2048m; su
     <link href="http://wangbokun.com/2015/11/30/oozie_sharelib_upgrade/"/>
     <id>http://wangbokun.com/2015/11/30/oozie_sharelib_upgrade/</id>
     <published>2015-11-30T11:40:36.000Z</published>
-    <updated>2016-01-04T11:48:41.000Z</updated>
+    <updated>2016-01-12T09:42:59.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p> ozie  hdfs url 中添加新的pig jar不能被识别,需要upgrade sharelib，记录操作如下：</p>
 </blockquote>

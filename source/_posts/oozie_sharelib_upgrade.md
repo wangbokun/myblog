@@ -4,8 +4,8 @@
 	title: oozie  sharelib  upgrade
 	date: 2015-11-30 19:40:36
 	categories: oozie
-	tags: 
-	 ooize 
+	tags:
+	 ooize
 	 sharelib
 
 ---
@@ -16,7 +16,7 @@
 hadoop fs -put  pig_1_4  /user/oozie/share/lib/lib_20151202054214/pig_14
 ```
 ----
-  
+
 然后list 不出来pig_14
 
 ----
