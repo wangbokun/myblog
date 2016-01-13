@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/hue-admin-user/" style="font-size: 10px;">hue admin user</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
+						<a href="/tags/MetaException-hive/" style="font-size: 10px;">MetaException hive</a> <a href="/tags/hadoop-hdfs-yarn/" style="font-size: 20px;">hadoop hdfs yarn</a> <a href="/tags/hue-admin-user/" style="font-size: 10px;">hue admin user</a> <a href="/tags/ooize/" style="font-size: 10px;">ooize</a> <a href="/tags/ooize-smtp-mail/" style="font-size: 10px;">ooize  smtp mail</a> <a href="/tags/ooize-mail/" style="font-size: 10px;">ooize mail</a> <a href="/tags/ooize-sharelib/" style="font-size: 10px;">ooize sharelib</a> <a href="/tags/yarn-hadoop-capacity-scheduler/" style="font-size: 10px;">yarn hadoop capacity scheduler</a> <a href="/tags/yarn-hadoop-mem/" style="font-size: 10px;">yarn hadoop mem</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,83 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-oozie_sharelib_upgrade" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/30/oozie_sharelib_upgrade/" class="article-date">
+  	<time datetime="2015-11-30T11:40:36.000Z" itemprop="datePublished">2015-11-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/30/oozie_sharelib_upgrade/">oozie  sharelib  upgrade</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p> ozie  hdfs url 中添加新的pig jar不能被识别,需要upgrade sharelib，记录操作如下：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -put  pig_1_4  /user/oozie/share/lib/lib_20151202054214/pig_14</span><br></pre></td></tr></table></figure>
+<hr>
+<p>然后list 不出来pig_14</p>
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u oozie oozie  admin -shareliblist -oozie http://localhost:<span class="number">11000</span>/oozie</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Available ShareLib]&#10;oozie&#10;hive&#10;distcp&#10;hcatalog&#10;sqoop&#10;mapreduce-streaming&#10;spark&#10;hive2&#10;pig</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>需要执行update share lib  命令如下</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oozie admin -sharelibupdate  -oozie http://localhost:<span class="number">11000</span>/oozie</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后执行list就可以看到相应的jar 目录 pig_14</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oozie  admin -shareliblist -oozie http://localhost:<span class="number">11000</span>/oozie</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Available ShareLib]&#10;oozie&#10;hive&#10;distcp&#10;hcatalog&#10;sqoop&#10;mapreduce-streaming&#10;spark&#10;pig_14&#10;hive2&#10;pig</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ooize-sharelib/">ooize sharelib</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/oozie/">oozie</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-oozieEmail" class="article article-type-post" itemscope itemprop="blogPost">
   

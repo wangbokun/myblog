@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://wangbokun.com/"/>
-  <updated>2016-01-12T09:42:44.000Z</updated>
+  <updated>2016-01-13T09:46:14.000Z</updated>
   <id>http://wangbokun.com/</id>
   
   <author>
@@ -13,6 +13,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[oozie discp s3 shell action Permission denied]]></title>
+    <link href="http://wangbokun.com/2016/01/13/oozieshellactiondiscp/"/>
+    <id>http://wangbokun.com/2016/01/13/oozieshellactiondiscp/</id>
+    <published>2016-01-13T11:40:36.000Z</published>
+    <updated>2016-01-13T09:46:14.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>CDH oozie discp s3，使用用户A，启动oozie job，但是mr运行的时候默认使用yarn用户来启动mr，导致报错</p>
+</blockquote>
+<hr>
+<pre><code><span class="constant">Diagnostics:</span> <span class="constant">Permission </span><span class="symbol">denied:</span> user=ads_up, access=<span class="constant">EXECUTE,</span> inode=<span class="string">"/user/yarn/.staging"</span><span class="symbol">:yarn</span><span class="symbol">:hdfs</span><span class="symbol">:drwx------</span>
+</code></pre><hr>
+<p>##【解决方案】</p>
+<ul>
+<li>Disctcp Action</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"distcp-node"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">distcp</span> <span class="attribute">xmlns</span>=<span class="value">"uri:oozie:distcp-action:0.1"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">job-tracker</span>&gt;</span>$&#123;jobTracker&#125;<span class="tag">&lt;/<span class="title">job-tracker</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">name-node</span>&gt;</span>$&#123;nameNode&#125;<span class="tag">&lt;/<span class="title">name-node</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">prepare</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">delete</span> <span class="attribute">path</span>=<span class="value">"$&#123;nameNode&#125;/user/$&#123;wf:user()&#125;/$&#123;examplesRoot&#125;/output-data/$&#123;outputDir&#125;"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">prepare</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">configuration</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.queue.name<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">value</span>&gt;</span>$&#123;queueName&#125;<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">arg</span>&gt;</span>$&#123;nameNode&#125;/user/$&#123;wf:user()&#125;/$&#123;examplesRoot&#125;/input-data/text/data.txt<span class="tag">&lt;/<span class="title">arg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">arg</span>&gt;</span>$&#123;nameNode&#125;/user/$&#123;wf:user()&#125;/$&#123;examplesRoot&#125;/output-data/$&#123;outputDir&#125;/data.txt<span class="tag">&lt;/<span class="title">arg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">distcp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ok</span> <span class="attribute">to</span>=<span class="value">"end"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">error</span> <span class="attribute">to</span>=<span class="value">"fail"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Shell Action</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">action</span> <span class="attribute">name</span>=<span class="value">"distcp_shell"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">shell</span> <span class="attribute">xmlns</span>=<span class="value">"uri:oozie:shell-action:0.2"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">job-tracker</span>&gt;</span>$&#123;jobTracker&#125;<span class="tag">&lt;/<span class="title">job-tracker</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">name-node</span>&gt;</span>$&#123;nameNode&#125;<span class="tag">&lt;/<span class="title">name-node</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">prepare</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">delete</span> <span class="attribute">path</span>=<span class="value">'$&#123;file_path&#125;'</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">prepare</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.queue.name<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="title">value</span>&gt;</span>$&#123;queueName&#125;<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">exec</span>&gt;</span>$&#123;distcp_script&#125;<span class="tag">&lt;/<span class="title">exec</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">file</span>&gt;</span>$&#123;distcp_script_path&#125;#$&#123;distcp_script&#125;<span class="tag">&lt;/<span class="title">file</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">capture-output</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">shell</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">ok</span> <span class="attribute">to</span>=<span class="value">"end"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">error</span> <span class="attribute">to</span>=<span class="value">"send_email"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>shell script</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span></span><br><span class="line">          ACCESSKEYID=xxxx</span><br><span class="line">          SECRETACCESSKEY=xxxx</span><br><span class="line"></span><br><span class="line">          <span class="built_in">export</span> HADOOP_USER_NAME=A</span><br><span class="line">          hadoop distcp -D fs.s3n.awsAccessKeyId=<span class="variable">$ACCESSKEYID</span> \</span><br><span class="line">          -D fs.s3n.awsSecretAccessKey=<span class="variable">$SECRETACCESSKEY</span> \</span><br><span class="line">          <span class="operator">-f</span> file_list_path/part-<span class="number">00000</span> \</span><br><span class="line">          hdfs://cdh/current_user/file_data_path/</span><br></pre></td></tr></table></figure>
+<p>##注意：</p>
+<p>export HADOOP_USER_NAME=A</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>CDH oozie discp s3，使用用户A，启动oozie job，但是mr运行的时候默认使用yarn用户来启动mr，导致报错</p>
+</blockquote>
+<hr>
+<pre><code><span class="constant">]]>
+    </summary>
+    
+      <category term="ooize" scheme="http://wangbokun.com/tags/ooize/"/>
+    
+      <category term="oozie" scheme="http://wangbokun.com/categories/oozie/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[hue create admin user]]></title>
@@ -131,6 +173,90 @@ FailedObject: org.apache.oozie.CoordinatorActionBean@<span class="number">266</s
   </entry>
   
   <entry>
+    <title><![CDATA[yarn 调度器 Capacity Scheduler]]></title>
+    <link href="http://wangbokun.com/2016/01/04/hadoopyarnqueue/"/>
+    <id>http://wangbokun.com/2016/01/04/hadoopyarnqueue/</id>
+    <published>2016-01-04T11:40:36.000Z</published>
+    <updated>2016-01-04T16:39:40.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>hadoop三种调度器简单说明</p>
+</blockquote>
+<ul>
+<li>FIFO 系统默认调度器.按照作业提交时间先后顺序依次执行.</li>
+<li>Capacity Scheduler 资源调度器,为租户分配不同QUEUE来提交作业，每个QUEUE可以限制总统量.</li>
+<li>Fair Scheduler 公平调度器，正如其名，对于每个作业一视同仁，谁先抢到资源谁先用.</li>
+</ul>
+<blockquote>
+<p>本章重点说明下 Capacity Scheduler</p>
+</blockquote>
+<ul>
+<li>先说明下几个配置含义</li>
+</ul>
+<pre><code><span class="variable">&lt;property&gt;</span>
+ <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.maximum-applications<span class="variable">&lt;/name&gt;</span>
+ <span class="variable">&lt;value&gt;</span>10000<span class="variable">&lt;/value&gt;</span>
+ <span class="variable">&lt;description&gt;</span>
+    集群最大并行作业数
+ <span class="variable">&lt;/description&gt;</span>
+<span class="variable">&lt;property&gt;</span>
+
+
+
+<span class="variable">&lt;property&gt;</span>
+ <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.maximum-am-resource-percent<span class="variable">&lt;/name&gt;</span>
+ <span class="variable">&lt;value&gt;</span>0.1<span class="variable">&lt;/value&gt;</span>
+ <span class="variable">&lt;description&gt;</span>
+   集群中可用于运行application master的资源比例上限，用于限制并发运行的应用
+    即：yarn.scheduler.capacity.maximum-applications<span class="keyword">*</span>yarn.scheduler.capacity.maximum-am-resource-percent = 最大并行任务数
+ <span class="variable">&lt;/description&gt;</span>
+   <span class="variable">&lt;/property&gt;</span>
+</code></pre><hr>
+<blockquote>
+<p>application master</p>
+</blockquote>
+<ul>
+<li><p>这个地方提到了application master 先简单介绍一下.如图所示：<br><img src="http://wangbokun.com/img/rsourcemanager_liucheng.png" alt="Mou icon"></p>
+<p>一个作业提交倒ResourceManager后，RM会先找一台nodemanager启动一个Container，这个Container中会运行一个application master(和RM建立链接，汇报作业运行状态，直到作业完成会被销毁)，然后application master会分配作业到nodemanager上，再去run map task &amp;&amp; reduce task</p>
+<hr>
+<p>这个简单提下，后续专门写这块逻辑</p>
+</li>
+</ul>
+<ul>
+<li>继续看配置</li>
+</ul>
+<pre><code><span class="variable">&lt;property&gt;</span>
+ <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.node-locality-delay<span class="variable">&lt;/name&gt;</span>
+ <span class="variable">&lt;value&gt;</span><span class="number">30</span><span class="variable">&lt;/value&gt;</span>
+ <span class="variable">&lt;description&gt;</span>
+      本地延迟分配次数，默认为<span class="number">40</span>，设置-<span class="number">1</span>，意思是关闭。
+ <span class="variable">&lt;/description&gt;</span>
+   <span class="variable">&lt;/property&gt;</span>
+
+
+<span class="variable">&lt;property&gt;</span>
+ <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.root.queues<span class="variable">&lt;/name&gt;</span> 
+ <span class="variable">&lt;value&gt;</span><span class="keyword">default</span>,queue1,queue2,queue3<span class="variable">&lt;/value&gt;</span>
+ <span class="variable">&lt;description&gt;</span>
+      设置queue个数、名称
+ <span class="variable">&lt;/description&gt;</span>
+<span class="variable">&lt;/property&gt;</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>hadoop三种调度器简单说明</p>
+</blockquote>
+<ul>
+<li>FIFO 系统默认调度器.按照作业提交时间先后顺序依次执行.</li>
+<li>Capacity Scheduler 资源调度器,为租户分配不同QUEUE来提交作]]>
+    </summary>
+    
+      <category term="yarn hadoop capacity scheduler" scheme="http://wangbokun.com/tags/yarn-hadoop-capacity-scheduler/"/>
+    
+      <category term="hadoop" scheme="http://wangbokun.com/categories/hadoop/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[yarn mem config]]></title>
     <link href="http://wangbokun.com/2016/01/04/hadoopyarnconfig/"/>
     <id>http://wangbokun.com/2016/01/04/hadoopyarnconfig/</id>
@@ -217,90 +343,6 @@ FailedObject: org.apache.oozie.CoordinatorActionBean@<span class="number">266</s
     </summary>
     
       <category term="yarn hadoop mem" scheme="http://wangbokun.com/tags/yarn-hadoop-mem/"/>
-    
-      <category term="hadoop" scheme="http://wangbokun.com/categories/hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[yarn 调度器 Capacity Scheduler]]></title>
-    <link href="http://wangbokun.com/2016/01/04/hadoopyarnqueue/"/>
-    <id>http://wangbokun.com/2016/01/04/hadoopyarnqueue/</id>
-    <published>2016-01-04T11:40:36.000Z</published>
-    <updated>2016-01-04T16:39:40.000Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>hadoop三种调度器简单说明</p>
-</blockquote>
-<ul>
-<li>FIFO 系统默认调度器.按照作业提交时间先后顺序依次执行.</li>
-<li>Capacity Scheduler 资源调度器,为租户分配不同QUEUE来提交作业，每个QUEUE可以限制总统量.</li>
-<li>Fair Scheduler 公平调度器，正如其名，对于每个作业一视同仁，谁先抢到资源谁先用.</li>
-</ul>
-<blockquote>
-<p>本章重点说明下 Capacity Scheduler</p>
-</blockquote>
-<ul>
-<li>先说明下几个配置含义</li>
-</ul>
-<pre><code><span class="variable">&lt;property&gt;</span>
- <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.maximum-applications<span class="variable">&lt;/name&gt;</span>
- <span class="variable">&lt;value&gt;</span>10000<span class="variable">&lt;/value&gt;</span>
- <span class="variable">&lt;description&gt;</span>
-    集群最大并行作业数
- <span class="variable">&lt;/description&gt;</span>
-<span class="variable">&lt;property&gt;</span>
-
-
-
-<span class="variable">&lt;property&gt;</span>
- <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.maximum-am-resource-percent<span class="variable">&lt;/name&gt;</span>
- <span class="variable">&lt;value&gt;</span>0.1<span class="variable">&lt;/value&gt;</span>
- <span class="variable">&lt;description&gt;</span>
-   集群中可用于运行application master的资源比例上限，用于限制并发运行的应用
-    即：yarn.scheduler.capacity.maximum-applications<span class="keyword">*</span>yarn.scheduler.capacity.maximum-am-resource-percent = 最大并行任务数
- <span class="variable">&lt;/description&gt;</span>
-   <span class="variable">&lt;/property&gt;</span>
-</code></pre><hr>
-<blockquote>
-<p>application master</p>
-</blockquote>
-<ul>
-<li><p>这个地方提到了application master 先简单介绍一下.如图所示：<br><img src="http://wangbokun.com/img/rsourcemanager_liucheng.png" alt="Mou icon"></p>
-<p>一个作业提交倒ResourceManager后，RM会先找一台nodemanager启动一个Container，这个Container中会运行一个application master(和RM建立链接，汇报作业运行状态，直到作业完成会被销毁)，然后application master会分配作业到nodemanager上，再去run map task &amp;&amp; reduce task</p>
-<hr>
-<p>这个简单提下，后续专门写这块逻辑</p>
-</li>
-</ul>
-<ul>
-<li>继续看配置</li>
-</ul>
-<pre><code><span class="variable">&lt;property&gt;</span>
- <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.node-locality-delay<span class="variable">&lt;/name&gt;</span>
- <span class="variable">&lt;value&gt;</span><span class="number">30</span><span class="variable">&lt;/value&gt;</span>
- <span class="variable">&lt;description&gt;</span>
-      本地延迟分配次数，默认为<span class="number">40</span>，设置-<span class="number">1</span>，意思是关闭。
- <span class="variable">&lt;/description&gt;</span>
-   <span class="variable">&lt;/property&gt;</span>
-
-
-<span class="variable">&lt;property&gt;</span>
- <span class="variable">&lt;name&gt;</span>yarn.scheduler.capacity.root.queues<span class="variable">&lt;/name&gt;</span> 
- <span class="variable">&lt;value&gt;</span><span class="keyword">default</span>,queue1,queue2,queue3<span class="variable">&lt;/value&gt;</span>
- <span class="variable">&lt;description&gt;</span>
-      设置queue个数、名称
- <span class="variable">&lt;/description&gt;</span>
-<span class="variable">&lt;/property&gt;</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote>
-<p>hadoop三种调度器简单说明</p>
-</blockquote>
-<ul>
-<li>FIFO 系统默认调度器.按照作业提交时间先后顺序依次执行.</li>
-<li>Capacity Scheduler 资源调度器,为租户分配不同QUEUE来提交作]]>
-    </summary>
-    
-      <category term="yarn hadoop capacity scheduler" scheme="http://wangbokun.com/tags/yarn-hadoop-capacity-scheduler/"/>
     
       <category term="hadoop" scheme="http://wangbokun.com/categories/hadoop/"/>
     
